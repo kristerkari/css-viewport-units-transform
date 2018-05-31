@@ -1,0 +1,73 @@
+{
+  "name": "css-viewport-units-transform",
+  "version": "0.0.1",
+  "description":
+    "Transform CSS viewport units of a style object to pixels based on window dimensions",
+  "main": "dist/index.js",
+  "author": "Krister Kari",
+  "license": "MIT",
+  "files": [
+    "dist",
+    "src",
+    "!**/__tests__",
+    "!**/__mocks__",
+    "!**/perf-tests",
+    "CHANGELOG.md",
+    "README.md"
+  ],
+  "keywords": ["CSS-in-JS", "styles", "CSS", "Viewport units"],
+  "bugs": {
+    "url": "https://github.com/kristerkari/css-viewport-units-transform/issues"
+  },
+  "homepage":
+    "https://github.com/kristerkari/css-viewport-units-transform#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kristerkari/css-viewport-units-transform.git"
+  },
+  "scripts": {
+    "prepublish": "npm run build",
+    "prebuild": "rimraf dist",
+    "build": "babel src --out-dir dist --ignore src/__tests__,src/__mocks__",
+    "precommit": "lint-staged",
+    "release": "npmpub",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-jest": "^23.0.1",
+    "babel-preset-env": "^1.7.0",
+    "coveralls": "^3.0.1",
+    "husky": "^0.14.3",
+    "jest": "^23.1.0",
+    "lint-staged": "^7.1.2",
+    "npmpub": "^3.1.0",
+    "prettier": "^1.13.3",
+    "rimraf": "^2.6.2"
+  },
+  "lint-staged": {
+    "*.{js,md,json}": ["prettier --write", "git add"]
+  },
+  "babel": {
+    "presets": ["env"]
+  },
+  "prettier": {
+    "semi": true,
+    "singleQuote": false,
+    "trailingComma": "none"
+  },
+  "jest": {
+    "collectCoverageFrom": ["src/*.js"],
+    "coverageDirectory": "./.coverage/",
+    "coverageReporters": ["lcov", "text"],
+    "coverageThreshold": {
+      "global": {
+        "branches": 75,
+        "functions": 75,
+        "lines": 75,
+        "statements": 75
+      }
+    }
+  }
+}
