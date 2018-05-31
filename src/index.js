@@ -13,10 +13,6 @@ function omit(obj, omitKey) {
   }, {});
 }
 
-function hasProps(obj) {
-  return obj != null && Object.getOwnPropertyNames(obj).length > 0;
-}
-
 function getMatchObject(dim) {
   const vh = dim.height;
   const vw = dim.width;
@@ -52,12 +48,10 @@ export function transform(styles, dimensions) {
     for (const key in selector) {
       const val = selector[key];
 
-      if (hasProps(val)) {
-        for (const key in val) {
-          if (!isViewportUnit(val[key])) {
-            continue;
-          }
+      for (const key in val) {
+        if (isViewportUnit(val[key])) {
           val[key] = replace(val[key]);
+          continue;
         }
       }
 
