@@ -4,15 +4,6 @@ function isViewportUnit(value) {
   return viewportUnitRE.test(value);
 }
 
-function omit(obj, omitKey) {
-  return Object.keys(obj).reduce((result, key) => {
-    if (key !== omitKey) {
-      result[key] = obj[key];
-    }
-    return result;
-  }, {});
-}
-
 function getMatchObject(dim) {
   const vh = dim.height;
   const vw = dim.width;
