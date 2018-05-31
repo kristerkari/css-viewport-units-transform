@@ -1,8 +1,7 @@
 {
   "name": "css-viewport-units-transform",
   "version": "0.0.1",
-  "description":
-    "Transform CSS viewport units of a style object to pixels based on window dimensions",
+  "description": "Transform CSS viewport units of a style object to pixels based on window dimensions",
   "main": "dist/index.js",
   "author": "Krister Kari",
   "license": "MIT",
@@ -15,12 +14,16 @@
     "CHANGELOG.md",
     "README.md"
   ],
-  "keywords": ["CSS-in-JS", "styles", "CSS", "Viewport units"],
+  "keywords": [
+    "CSS-in-JS",
+    "styles",
+    "CSS",
+    "Viewport units"
+  ],
   "bugs": {
     "url": "https://github.com/kristerkari/css-viewport-units-transform/issues"
   },
-  "homepage":
-    "https://github.com/kristerkari/css-viewport-units-transform#readme",
+  "homepage": "https://github.com/kristerkari/css-viewport-units-transform#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kristerkari/css-viewport-units-transform.git"
@@ -47,10 +50,15 @@
     "rimraf": "^2.6.2"
   },
   "lint-staged": {
-    "*.{js,md,json}": ["prettier --write", "git add"]
+    "*.{js,md,json}": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "babel": {
-    "presets": ["env"]
+    "presets": [
+      "env"
+    ]
   },
   "prettier": {
     "semi": true,
@@ -58,9 +66,14 @@
     "trailingComma": "none"
   },
   "jest": {
-    "collectCoverageFrom": ["src/*.js"],
+    "collectCoverageFrom": [
+      "src/*.js"
+    ],
     "coverageDirectory": "./.coverage/",
-    "coverageReporters": ["lcov", "text"],
+    "coverageReporters": [
+      "lcov",
+      "text"
+    ],
     "coverageThreshold": {
       "global": {
         "branches": 75,
