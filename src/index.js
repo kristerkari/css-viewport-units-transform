@@ -39,18 +39,17 @@ export function transform(styles, dimensions) {
     for (const key in selector) {
       const val = selector[key];
 
+      if (isViewportUnit(val)) {
+        selector[key] = replace(val);
+        continue;
+      }
+
       for (const key in val) {
         if (isViewportUnit(val[key])) {
           val[key] = replace(val[key]);
           continue;
         }
       }
-
-      if (!isViewportUnit(val)) {
-        continue;
-      }
-
-      selector[key] = replace(val);
     }
   }
   return styles;
