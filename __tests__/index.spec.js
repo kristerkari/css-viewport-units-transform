@@ -136,9 +136,9 @@ describe("CSS viewport units", () => {
   });
 
   it("should not mutate input", () => {
-    var styles = Object.freeze({
+    var styles = {
       fontSize: "10vw"
-    });
+    };
     expect(
       transform(styles, {
         width: 480,
@@ -148,6 +148,41 @@ describe("CSS viewport units", () => {
       fontSize: 48
     });
     expect(styles).toEqual({ fontSize: "10vw" });
+    var styles2 = {
+      test: {
+        marginTop: "10vw",
+        fontSize: 10,
+        shadowOffset: { width: 10, height: "10vw" },
+        shadowRadius: "1vw",
+        shadowColor: "red",
+        shadowOpacity: 1
+      }
+    };
+    expect(
+      transform(styles2, {
+        width: 480,
+        height: 100
+      })
+    ).toEqual({
+      test: {
+        marginTop: 48,
+        fontSize: 10,
+        shadowOffset: { width: 10, height: 48 },
+        shadowRadius: 4.8,
+        shadowColor: "red",
+        shadowOpacity: 1
+      }
+    });
+    expect(styles2).toEqual({
+      test: {
+        marginTop: "10vw",
+        fontSize: 10,
+        shadowOffset: { width: 10, height: "10vw" },
+        shadowRadius: "1vw",
+        shadowColor: "red",
+        shadowOpacity: 1
+      }
+    });
   });
 
   it("should transform vw unit", () => {

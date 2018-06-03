@@ -15,6 +15,10 @@ function getMatchObject(dim) {
   };
 }
 
+function clone(obj) {
+  return JSON.parse(JSON.stringify(obj));
+}
+
 export function transform(styles, dimensions) {
   const dim = getMatchObject(dimensions);
 
@@ -28,16 +32,14 @@ export function transform(styles, dimensions) {
     return parseFloat(value.replace(viewportUnitRE, replaceViewportUnit));
   }
 
-  const replacement = {};
+  const replacement = clone(styles);
 
-  for (const key in styles) {
-    const selector = styles[key];
+  for (const key in replacement) {
+    const selector = replacement[key];
 
     if (isViewportUnit(selector)) {
       replacement[key] = replace(selector);
       continue;
-    } else {
-      replacement[key] = selector;
     }
 
     for (const key in selector) {
