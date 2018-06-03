@@ -28,13 +28,13 @@ export function transform(styles, dimensions) {
     return parseFloat(value.replace(viewportUnitRE, replaceViewportUnit));
   }
 
-  const repacement = Object.assign({}, styles);
+  const replacement = Object.assign({}, styles);
 
   for (const key in styles) {
-    const selector = repacement[key];
+    const selector = replacement[key];
 
     if (isViewportUnit(selector)) {
-      repacement[key] = replace(selector);
+      replacement[key] = replace(selector);
       continue;
     }
 
@@ -54,5 +54,5 @@ export function transform(styles, dimensions) {
       }
     }
   }
-  return repacement;
+  return replacement;
 }
