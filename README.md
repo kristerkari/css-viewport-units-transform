@@ -31,7 +31,7 @@ or
 transform(
   {
     myClass: {
-      fontSize: "10vw"
+      fontSize: "10vh"
     }
   },
   {
@@ -46,7 +46,7 @@ transform(
 ```js
 {
   myClass: {
-    fontSize: 48,
+    fontSize: 10,
   }
 }
 ```
