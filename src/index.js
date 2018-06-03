@@ -28,14 +28,16 @@ export function transform(styles, dimensions) {
     return parseFloat(value.replace(viewportUnitRE, replaceViewportUnit));
   }
 
-  const replacement = Object.assign({}, styles);
+  const replacement = {};
 
   for (const key in styles) {
-    const selector = replacement[key];
+    const selector = styles[key];
 
     if (isViewportUnit(selector)) {
       replacement[key] = replace(selector);
       continue;
+    } else {
+      replacement[key] = selector;
     }
 
     for (const key in selector) {

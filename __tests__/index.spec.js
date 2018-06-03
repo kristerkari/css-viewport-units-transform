@@ -5,6 +5,40 @@ describe("CSS viewport units", () => {
     expect(
       transform(
         {
+          fontSize: "10vw",
+          marginTop: 12
+        },
+        {
+          width: 480,
+          height: 100
+        }
+      )
+    ).toEqual({
+      fontSize: 48,
+      marginTop: 12
+    });
+    expect(
+      transform(
+        {
+          test: {
+            fontSize: "10vw",
+            marginTop: 12
+          }
+        },
+        {
+          width: 480,
+          height: 100
+        }
+      )
+    ).toEqual({
+      test: {
+        fontSize: 48,
+        marginTop: 12
+      }
+    });
+    expect(
+      transform(
+        {
           fontSize: 10
         },
         {
@@ -102,9 +136,9 @@ describe("CSS viewport units", () => {
   });
 
   it("should not mutate input", () => {
-    var styles = {
+    var styles = Object.freeze({
       fontSize: "10vw"
-    };
+    });
     expect(
       transform(styles, {
         width: 480,
@@ -389,6 +423,8 @@ describe("CSS viewport units", () => {
       transform(
         {
           test: {
+            marginTop: "10vw",
+            fontSize: 10,
             shadowOffset: { width: 10, height: "10vw" },
             shadowRadius: "1vw",
             shadowColor: "red",
@@ -402,6 +438,8 @@ describe("CSS viewport units", () => {
       )
     ).toEqual({
       test: {
+        marginTop: 48,
+        fontSize: 10,
         shadowOffset: { width: 10, height: 48 },
         shadowRadius: 4.8,
         shadowColor: "red",
