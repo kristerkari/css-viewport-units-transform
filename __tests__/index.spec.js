@@ -101,6 +101,21 @@ describe("CSS viewport units", () => {
     });
   });
 
+  it("should not mutate input", () => {
+    var styles = {
+      fontSize: "10vw"
+    };
+    expect(
+      transform(styles, {
+        width: 480,
+        height: 100
+      })
+    ).toEqual({
+      fontSize: 48
+    });
+    expect(styles).toEqual({ fontSize: "10vw" });
+  });
+
   it("should transform vw unit", () => {
     expect(
       transform(
