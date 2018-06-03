@@ -1,6 +1,6 @@
 {
   "name": "css-viewport-units-transform",
-  "version": "0.10.0",
+  "version": "0.10.1",
   "description": "Transform CSS viewport units of a style object to pixels based on window dimensions",
   "main": "dist/index.js",
   "author": "Krister Kari",
