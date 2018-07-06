@@ -185,6 +185,43 @@ describe("CSS viewport units", () => {
     });
   });
 
+  it("should transform multiple values with viewport units", () => {
+    expect(
+      transform(
+        {
+          fontSize: "10vw",
+          lineHeight: "10vh"
+        },
+        {
+          width: 480,
+          height: 100
+        }
+      )
+    ).toEqual({
+      fontSize: 48,
+      lineHeight: 10
+    });
+    expect(
+      transform(
+        {
+          fontSize: "10vh",
+          test: {
+            fontSize: "10vw"
+          }
+        },
+        {
+          width: 480,
+          height: 100
+        }
+      )
+    ).toEqual({
+      fontSize: 10,
+      test: {
+        fontSize: 48
+      }
+    });
+  });
+
   it("should transform vw unit", () => {
     expect(
       transform(
