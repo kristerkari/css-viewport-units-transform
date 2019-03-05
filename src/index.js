@@ -15,14 +15,20 @@ function getMatchObject(dim) {
   };
 }
 
-function clone(obj) {
-  return JSON.parse(JSON.stringify(obj));
+function clone(aObject) {
+  let value;
+  const bObject = {};
+  for (const key in aObject) {
+    value = aObject[key];
+    bObject[key] = typeof value === "object" ? clone(value) : value;
+  }
+  return bObject;
 }
 
 export function transform(styles, dimensions) {
   const dim = getMatchObject(dimensions);
 
-  function replaceViewportUnit(match, number, unit) {
+  function replaceViewportUnit(_, number, unit) {
     const base = dim[unit];
     const val = parseFloat(number) / 100;
     return val * base;
