@@ -50,7 +50,7 @@
     "lint-staged": "^13.1.2",
     "npmpub": "^5.0.0",
     "prettier": "^2.3.2",
-    "rimraf": "^3.0.2",
+    "rimraf": "^4.4.0",
     "size-limit": "^8.2.4"
   },
   "lint-staged": {
