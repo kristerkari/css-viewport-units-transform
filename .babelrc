@@ -3,9 +3,7 @@
     [
       "@babel/preset-env",
       {
-        "exclude": [
-          "transform-typeof-symbol"
-        ]
+        "exclude": ["transform-typeof-symbol"]
       }
     ]
   ]

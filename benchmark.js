@@ -24,34 +24,34 @@ var transform = require("./dist/index").transform;
 console.log("-----------------------------------------");
 
 once
-  .add("1 call", function() {
+  .add("1 call", function () {
     transform(styles, dimensions);
   })
-  .on("cycle", function(event) {
+  .on("cycle", function (event) {
     console.log(String(event.target));
   })
-  .on("complete", function() {
+  .on("complete", function () {
     console.log("-----------------------------------------");
   })
   .run({ async: false });
 
 fourTimes
-  .add("4 calls", function() {
+  .add("4 calls", function () {
     transform(styles, dimensions);
     transform(styles, dimensions);
     transform(styles, dimensions);
     transform(styles, dimensions);
   })
-  .on("cycle", function(event) {
+  .on("cycle", function (event) {
     console.log(String(event.target));
   })
-  .on("complete", function() {
+  .on("complete", function () {
     console.log("-----------------------------------------");
   })
   .run({ async: false });
 
 eightTimesTheSame
-  .add("8 calls", function() {
+  .add("8 calls", function () {
     transform(styles, dimensions);
     transform(styles, dimensions);
     transform(styles, dimensions);
@@ -61,10 +61,10 @@ eightTimesTheSame
     transform(styles, dimensions);
     transform(styles, dimensions);
   })
-  .on("cycle", function(event) {
+  .on("cycle", function (event) {
     console.log(String(event.target));
   })
-  .on("complete", function() {
+  .on("complete", function () {
     console.log("-----------------------------------------");
   })
   .run({ async: false });
