@@ -1504,9 +1504,9 @@
     "@sinonjs/commons" "^2.0.0"
 
 "@size-limit/file@^11.0.2":
-  version "11.0.2"
-  resolved "https://registry.yarnpkg.com/@size-limit/file/-/file-11.0.2.tgz#1f53087e1c5043e09a37391702dc3a7ce8751935"
-  integrity sha512-874lrMtWYRL+xb/6xzejjwD+krfHTOo+2uFGpZfJScvuNv91Ni2O7k0o09zC70VzCYBGkXquV92ln/H+/ognGg==
+  version "11.1.2"
+  resolved "https://registry.yarnpkg.com/@size-limit/file/-/file-11.1.2.tgz#34dfef49f73d3979e159e3dd0e9fa2995725708a"
+  integrity sha512-zktWwhO7MxVwQXbrZzy0VKfM5mZK3Aza1G3XbWRP8q+/3+irPKCz2fmyYJqJAJVwC9U1jAs6xEPlTJzxKgEAmw==
 
 "@types/babel__core@^7.1.14":
   version "7.1.15"
